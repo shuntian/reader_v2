@@ -3,36 +3,14 @@
     <h2 class="channel-group__title">限时免费</h2>
   </div>
   <ul class="book-table">
-    <li>
+    <li v-for="item in free">
       <div class="u-book">
         <div class="book-cover">
-          <img src="/" alt="">
+          <img v-bind:src="item.cover" alt="{{item.title}}">
           <div class="u-tagRT -freefiction"></div>
         </div>
         <div class="book-info">
-          <h3 class="title">书籍名称</h3>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="u-book">
-        <div class="book-cover">
-          <img src="/" alt="">
-          <div class="u-tagRT -freefiction"></div>
-        </div>
-        <div class="book-info">
-          <h3 class="title">书籍名称</h3>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="u-book">
-        <div class="book-cover">
-          <img src="/" alt="">
-          <div class="u-tagRT -freefiction"></div>
-        </div>
-        <div class="book-info">
-          <h3 class="title">书籍名称</h3>
+          <h3 class="title">{{item.title}}</h3>
         </div>
       </div>
     </li>

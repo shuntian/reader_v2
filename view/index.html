@@ -8,22 +8,28 @@
     <title>书城首页</title>
   </head>
   <body>
-    <div id="app">
-      <div class="container-wrap">
-        <% include include/header.html %>
-        <div class="container-scroll">
-          <% include include/index-top.html %>
-          <% include include/index-hot.html %>
-          <% include include/index-recommend.html %>
-          <% include include/index-female.html %>
-          <% include include/index-male.html %>
-          <% include include/index-free.html %>
-          <% include include/index-bottom.html %>
+    <div id="app" style="width:414px; overflow:hidden">
+      <% include include/header.html %>
+      <div style="width:828px;transform:translate3d({{position}}px,0px,0px)">
+        <div class="container-wrap" style="width:414px; float: left; transition-duration: .5s,">
+          <div class="container-scroll" style="top:0">
+            <% include include/index-top.html %>
+            <% include include/index-hot.html %>
+            <% include include/index-recommend.html %>
+            <% include include/index-female.html %>
+            <% include include/index-male.html %>
+            <% include include/index-free.html %>
+            <% include include/index-bottom.html %>
+          </div>
+        </div>
+        <div style="width:414px; float: left;">
+          <% include include/index-self.html %>
         </div>
       </div>
     </div>
   </body>
   <script src="/static/lib/zepto.js"></script>
   <script src="/static/lib/vue.js"></script>
+  <script src="/static/lib/vue.min.js"></script>
   <script src="/static/script/index.js"></script>
 </html>

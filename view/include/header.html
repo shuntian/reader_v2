@@ -1,8 +1,8 @@
 <div class="header-tab" id="app-header">
-  <div class="Swipe-tab Swipe-tab_2 f-cb">
-    <a href="javascript:" class="Swipe-tab__on">书城</a>
-    <a href="javascript:">书架</a>
-    <i style="width:50%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px)"></i>
+  <div class="Swipe-tab Swipe-tab_2 f-cb" scope="scope">
+    <a href="javascript:" v-on:click="tabSwitch(0)" class="{{ tab_1_class }}">书城</a>
+    <a href="javascript:" v-on:click="tabSwitch(1)" class="{{ tab_2_class }}">书架</a>
+    <i style="width:50%;transition-duration:.5s;transform:translate3d({{ header_position }},0px,0px)" ></i>
   </div>
   <em class="header-user"></em>
   <em class="header-checkin"></em>
