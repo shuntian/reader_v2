@@ -40,6 +40,10 @@ app.use(controller.get('/search', function*(){
   this.body = yield render('search',{title:'搜索页面'});
 }))
 
+app.use(controller.get('/reader', function*(){
+	this.set('Cache-Control', 'no-cache');
+	this.body = yield render('reader');
+}))
 
 app.use(controller.get('/book', function*(){
   this.set('Cache-Control', 'no-cache');
@@ -90,6 +94,19 @@ app.use(controller.get('/ajax/book', function*(){
 	this.body = service.get_book_data(id);
 }))
 
+app.use(controller.get('/ajax/chapter', function*(){
+	this.body = service.get_chapter_data();
+}))
+
+app.use(controller.get('/ajax/chapter_data', function*(){
+  this.set('Cache-Control', 'no-cache');
+  var params = querystring.parse(this.req._parsedUrl.query);
+  var id = params.id;
+  if(!id){
+    id = "";
+  }
+	this.body = service.get_chapter_content_data(id);
+}))
 
 
 app.listen(3000);
